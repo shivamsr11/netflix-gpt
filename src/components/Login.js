@@ -1,26 +1,20 @@
 import React from 'react'
-import Header from './Header'
 import { useState,useRef } from "react"
-import { checkValidEmail} from "../utils/validate"
-import {checkValidPassword} from "../utils/validate"
-import {checkValidFullName} from "../utils/validate"
 import {checkValidData} from "../utils/validate"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
 import {auth} from "../utils/firebase";
-
-
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [isSignInForm, setIsSignForm] = useState(true)
  
   const [isFormValid, setIsFormValid] = useState(true)
+  const navigate = useNavigate();
   const toggleSignInForm = () => {
     setIsSignForm(!isSignInForm)
   }
 
-  
   const handleButtonClick = () =>{
-   
     const Message = checkValidData(email.current.value,password.current.value)
     setIsFormValid(Message)
    
@@ -33,6 +27,7 @@ const Login = () => {
         const user = userCredential.user;
         // ...
         console.log(user)
+        navigate("/browse")
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -40,7 +35,6 @@ const Login = () => {
         setIsFormValid(errorCode + "-" + errorMessage)
         // ..
       });
-    
     }
     else{
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
@@ -48,17 +42,16 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user)
-        // ...
+        navigate("/browse")
+         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setIsFormValid(error.code + "-" + error.message)
+        setIsFormValid(errorCode + "-" + errorMessage)
       });
-
-    }
-   
-  }
+      }
+   }
 
   const email = useRef(null);
   const password = useRef(null);
@@ -67,7 +60,10 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
+      <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10">
+       <img className='w-56 '
+        src = "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" 
+       alt = "netflix-logo"  /></div>
       <div className="absolute">
         <img src="https://assets.nflxext.com/ffe/siteui/vlv3/b4c7f092-0488-48b7-854d-ca055a84fb4f/5b22968d-b94f-44ec-bea3-45dcf457f29e/IN-en-20231204-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
           alt="bg-logo" />

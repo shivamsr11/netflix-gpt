@@ -1,0 +1,65 @@
+[debug] [2023-12-13T08:16:19.280Z] ----------------------------------------------------------------------
+[debug] [2023-12-13T08:16:19.293Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-13T08:16:19.295Z] CLI Version:   13.0.1
+[debug] [2023-12-13T08:16:19.296Z] Platform:      win32
+[debug] [2023-12-13T08:16:19.297Z] Node Version:  v21.4.0
+[debug] [2023-12-13T08:16:19.298Z] Time:          Wed Dec 13 2023 13:46:19 GMT+0530 (India Standard Time)
+[debug] [2023-12-13T08:16:19.298Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-13T08:16:19.922Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-13T08:16:19.924Z] > authorizing via signed-in user (rajmaneshreya363@gmail.com)
+[debug] [2023-12-13T08:16:19.924Z] [iam] checking project netflix-gpt-4e66c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-12-13T08:16:19.935Z] > refreshing access token with scopes: []
+[debug] [2023-12-13T08:16:19.945Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-13T08:16:19.946Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-13T08:16:21.036Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-13T08:16:21.037Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-13T08:16:21.088Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions [none]
+[debug] [2023-12-13T08:16:21.088Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions x-goog-quota-user=projects/netflix-gpt-4e66c
+[debug] [2023-12-13T08:16:21.089Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-13T08:16:23.059Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions 200
+[debug] [2023-12-13T08:16:23.059Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions {}
+[debug] [2023-12-13T08:16:23.060Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project netflix-gpt-4e66c:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-12-13T08:16:23.063Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c [none]
+[debug] [2023-12-13T08:16:24.928Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c 403
+[debug] [2023-12-13T08:16:24.928Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-12-13T08:16:24.931Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2023-12-13T10:19:20.741Z] ----------------------------------------------------------------------
+[debug] [2023-12-13T10:19:20.757Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-13T10:19:20.759Z] CLI Version:   13.0.1
+[debug] [2023-12-13T10:19:20.760Z] Platform:      win32
+[debug] [2023-12-13T10:19:20.761Z] Node Version:  v21.4.0
+[debug] [2023-12-13T10:19:20.763Z] Time:          Wed Dec 13 2023 15:49:20 GMT+0530 (India Standard Time)
+[debug] [2023-12-13T10:19:20.764Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-13T10:19:20.836Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-12-13T10:19:21.530Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-13T10:19:21.533Z] > authorizing via signed-in user (rajmaneshreya363@gmail.com)
+[debug] [2023-12-13T10:19:21.534Z] [iam] checking project netflix-gpt-4e66c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-12-13T10:19:21.541Z] > refreshing access token with scopes: []
+[debug] [2023-12-13T10:19:21.548Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-13T10:19:21.549Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-13T10:19:22.151Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-13T10:19:22.151Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-13T10:19:22.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions [none]
+[debug] [2023-12-13T10:19:22.209Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions x-goog-quota-user=projects/netflix-gpt-4e66c
+[debug] [2023-12-13T10:19:22.210Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-13T10:19:22.445Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-12-13T10:19:22.446Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-12-13T10:19:23.061Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions 200
+[debug] [2023-12-13T10:19:23.061Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-gpt-4e66c:testIamPermissions {}
+[debug] [2023-12-13T10:19:23.062Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project netflix-gpt-4e66c:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-12-13T10:19:23.065Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c [none]
+[debug] [2023-12-13T10:19:23.930Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c 403
+[debug] [2023-12-13T10:19:23.931Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-gpt-4e66c {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-12-13T10:19:23.936Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
