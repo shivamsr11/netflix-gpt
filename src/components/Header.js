@@ -25,30 +25,26 @@ const Header = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
         const {uid,email, displayName } = user;
         dispatch(addUser({uid : uid, email : email, displayName : displayName}))
         navigate("/browse")
-        // ...
       } else {
         dispatch(removeUser())
         navigate("/")
         // User is signed out
-        // ...
       }
     });
     // unsubscribe when component unmounts
     return () => unsubscribe();
   },[])
 
-
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between w-screen">
-       <img className='w-56 ' src =  {NETFLIX_LOGO}
+    <div className="absolute  bg-gradient-to-b from-black z-10 flex justify-between w-screen">
+       <img className='w-56 px-8 py-2 z-10' src =  {NETFLIX_LOGO}
        alt = "netflix-logo"  />
       {user && (<div>
          <button onClick = {handleSignOut}>
-         <img className = " mt-2 w-12 h-12 mt-4" src = {USER_ICON} alt = "user-icon" />
+         <img className = "  w-12 h-12 mt-4 mr-24 " src = {USER_ICON} alt = "user-icon" />
          </button>
        </div>)}
     </div>
